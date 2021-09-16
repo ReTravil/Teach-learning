@@ -1,0 +1,17 @@
+text = open('sentences.txt')
+for line in text.readlines():
+    print (line.lower())
+import re
+b = re.split('[^a-z]',line)
+b = [x for x in b if x]
+print (b)
+words={}
+numb=0
+for w in b:
+    if w not in words:
+        words[w] = numb
+        numb += 1
+        for znach in (sorted(val for key,val in words.items())):
+            for key,val in words.items():
+                if val==znach:
+                    print(key,val)
