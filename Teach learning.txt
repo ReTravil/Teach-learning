@@ -15,3 +15,25 @@ for w in b:
             for key,val in words.items():
                 if val==znach:
                     print(key,val)
+
+
+
+import re
+for line in open ('sentences.txt'):
+    s = line
+    y = s.lower() 
+    text = re.split('[^a-z]',y)
+    lines = list(filter(bool, map(str.rstrip,text)))
+    print (lines)
+
+
+
+
+text = open('sentences.txt')
+for line in text.readlines():
+    print (line.lower())
+    s = line
+    y = s.lower() 
+    text = re.split('[^a-z]',y)
+    lines = list(filter(bool, map(str.rstrip,text)))
+    print (lines)
